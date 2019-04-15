@@ -226,7 +226,7 @@ public abstract class Ship {
 		if (this.horizontal) { // if horizontal
 			if (row == bowRow) { // if shooting at the ship's row
 				for (int i = 0; i < this.length; i++) {
-					if (bowColumn - i == column && this.hit[i] != true) { // if ship occupies column and has not been hit there, then mark as hit
+					if (bowColumn - i == column) { // if ship occupies column and has not been hit there, then mark as hit
 						this.hit[i] = true;
 						return true;
 					}
@@ -236,7 +236,7 @@ public abstract class Ship {
 		else { // if vertical
 			if (column == bowColumn) { // if shooting at the ship's column
 				for (int i = 0; i < this.length; i++) {
-					if (bowRow - i == row && this.hit[i] != true) { // if ship occupies row and has not been hit there, then mark as hit
+					if (bowRow - i == row) { // if ship occupies row and has not been hit there, then mark as hit
 						this.hit[i] = true;
 						return true;
 					}
