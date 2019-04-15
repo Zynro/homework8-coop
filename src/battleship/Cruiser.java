@@ -1,16 +1,23 @@
 package battleship;
 
+/**
+ * Represents a Cruiser in the game.
+ * Inherited from Ship class.
+ */
 public class Cruiser extends Ship {
-	private int length;
 	
-	public Cruiser(int length) {
-		super(length);
-		this.length = length;
+	/**
+	 * Default constructor, calls the super constructor with length = 3 for Cruiser.
+	 */
+	public Cruiser() {
+		super(3);
 	}
 
+	/**
+	 * @return The type of this ship as a string ("cruiser").
+	 */
 	@Override
 	public String getShipType() {
 		return "cruiser";
 	}
-
 }
