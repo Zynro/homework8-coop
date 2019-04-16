@@ -30,7 +30,7 @@ public class Ocean {
 		boolean placed = false;
 		boolean horizontal;
 		
-		Ship battleship = new Battleship(4);
+		Ship battleship = new Battleship();
 		Ship[] cruisers = new Cruiser[2]; 
 		Ship[] destroyers = new Destroyer[3];
 		Ship[] submarines = new Submarine[4];
@@ -49,7 +49,7 @@ public class Ocean {
 		
 		for(int i = 0; i<cruisers.length; i++) {
 			placed = false;
-			cruisers[i] = new Cruiser(3);
+			cruisers[i] = new Cruiser();
 			while(placed == false) {
 				int column = random.nextInt();
 				int row = random.nextInt();
@@ -64,7 +64,7 @@ public class Ocean {
 		}
 		for(int i = 0; i<destroyers.length; i++) {
 			placed = false;
-			destroyers[i] = new Destroyer(3);
+			destroyers[i] = new Destroyer();
 			while(placed == false) {
 				int column = random.nextInt();
 				int row = random.nextInt();
@@ -79,7 +79,7 @@ public class Ocean {
 		}
 		for(int i = 0; i<submarines.length; i++) {
 			placed = false;
-			submarines[i] = new Submarine(3);
+			submarines[i] = new Submarine();
 			while(placed == false) {
 				int column = random.nextInt();
 				int row = random.nextInt();
