@@ -256,7 +256,7 @@ public abstract class Ship {
 	boolean isSunk() {
 		// Go through hit array, check if any element is false and return false if so
 		for (int i = 0; i < this.length; i++) {
-			if (this.hit[i] = false) {
+			if (this.hit[i] == false) {
 				return false;
 			}
 		}

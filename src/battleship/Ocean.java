@@ -126,6 +126,10 @@ public class Ocean {
 		return this.shipsSunk;
 	}
 	
+	public void addShipSunk() {
+		this.shipsSunk++;
+	}
+	
 	boolean isGameOver() {
 		if (this.shipsSunk == 10){
 			return true;
