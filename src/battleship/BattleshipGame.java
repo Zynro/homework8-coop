@@ -8,7 +8,7 @@ public class BattleshipGame {
 		// Set up ocean, place all ships, and print the display
 		Ocean ocean = new Ocean();
 		ocean.placeAllShipsRandomly();
-		ocean.printHidden();
+		ocean.print();
 		
 		Scanner sc = new Scanner(System.in); // variable for scanner
 		boolean keepPlaying = true; // variable to determine if user wants to keep playing

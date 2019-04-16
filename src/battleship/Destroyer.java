@@ -20,8 +20,4 @@ public class Destroyer extends Ship {
 	public String getShipType() {
 		return "destroyer";
 	}
-	@Override
-	public String toString() {
-		return "D";
-	}
 }

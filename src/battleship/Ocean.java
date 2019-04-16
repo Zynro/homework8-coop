@@ -105,8 +105,8 @@ public class Ocean {
 	
 	boolean shootAt(int row, int column) {
 		shotsFired++;
+		hitArray[row][column] = true;
 		if((ships[row][column].getShipType() != "empty") && (ships[column][row].isSunk() == false)) {
-			hitArray[row][column] = true;
 			hitCount++;
 			return true;
 		}else {
@@ -166,25 +166,6 @@ public class Ocean {
 		output = String.join("\n", printArray);
 		System.out.println(output);
 	}
-	void printHidden() {
-		String output = "";
-		String[] printArray = new String[11];
-		for(int i=0;i<printArray.length;i++) {
-			if(i==0) {
-				printArray[i] = "  0 1 2 3 4 5 6 7 8 9";
-				continue;
-			}else {
-				try {
-					printArray[i] = Integer.toString(i-1);
-					for (int column=0;column<ships[i-1].length;column++) {
-						printArray[i] = printArray[i] + " " + ships[i-1][column].toString();
-					}
-				}
-				catch (Exception e) {}
-			}
-		}
-		output = String.join("\n", printArray);
-		System.out.println(output);
-	}
+	
 	
 }
