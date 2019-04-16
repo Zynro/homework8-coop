@@ -1,16 +1,23 @@
 package battleship;
 
-class Battleship extends Ship {
-	private int length;
+/**
+ * Represents a Battleship in the game.
+ * Inherited from Ship class.
+ */
+public class Battleship extends Ship {
 	
-	public Battleship(int length) {
-		super(length);
-		this.length = length;
+	/**
+	 * Default constructor, calls the super constructor with length = 4 for Battleship.
+	 */
+	public Battleship() {
+		super(4);
 	}
 	
+	/**
+	 * @return The type of this ship as a string ("battleship").
+	 */
 	@Override
 	public String getShipType() {
 		return "battleship";
 	}
-	
 }
