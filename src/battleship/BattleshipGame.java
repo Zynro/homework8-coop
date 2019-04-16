@@ -5,16 +5,15 @@ import java.util.Scanner;
 public class BattleshipGame {
 
 	public static void main(String[] args) {
-		// Set up ocean, place all ships, and print the display
-		Ocean ocean = new Ocean();
-		ocean.placeAllShipsRandomly();
-		ocean.print();
-		
+		// Set up ocean, place all ships, and print the display		
 		Scanner sc = new Scanner(System.in); // variable for scanner
 		boolean keepPlaying = true; // variable to determine if user wants to keep playing
 		
 		// While user wants to keep playing, keep looping
 		while (keepPlaying) {
+			Ocean ocean = new Ocean();
+			ocean.placeAllShipsRandomly();
+			ocean.print();
 			// While game is not over, keep looping
 		    while (!ocean.isGameOver()) {
 		    	// Get row and column to shoot
@@ -46,7 +45,7 @@ public class BattleshipGame {
 		    }
 		    
 		    // Check if user wants to play again
-		    System.out.println("=========\nCongratulations! You win!\n=========");
+		    System.out.println("========================\nCongratulations! A Winner is You!\n========================");
 	        System.out.println("Type 1 to play again or 2 to end the game:");
 	        if (sc.nextInt() != 1) {
 	        	keepPlaying = false;
