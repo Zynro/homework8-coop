@@ -14,8 +14,10 @@ public class BattleshipGame {
 			Ocean ocean = new Ocean();
 			ocean.placeAllShipsRandomly();
 			ocean.print();
+			
 			// While game is not over, keep looping
 		    while (!ocean.isGameOver()) {
+		    	
 		    	// Get row and column to shoot
 		        System.out.println("Enter row:");
 		        int row = sc.nextInt();
@@ -30,22 +32,35 @@ public class BattleshipGame {
 			        column = sc.nextInt();
 		        }
 		        
-		        // Shoot at row and column
-		        ocean.shootAt(row, column);
+		        // Check if ship already sunk - then don't increase ocean's sunk counter
 		        Ship ship = ocean.getShipArray()[row][column];
-		        ship.shootAt(row, column);
-		        
-		        // Check if ship was sunk, if so increase ocean's shipsSunk counter by 1
-		        if (ship.isSunk()) {
-		        	ocean.addShipSunk();
+		        if (!ship.isSunk()) {
+
+			        // Shoot at row and column
+			        ocean.shootAt(row, column);
+			        ship.shootAt(row, column);
+			        
+			        // Check if ship was sunk, if so increase ocean's shipsSunk counter by 1
+			        if (ship.isSunk()) {
+			        	ocean.addShipSunk();
+			        }
+		        }
+		        else {
+		        	// Still increase shot counter even if ship already sunk, just don't increase sunk counter
+			        ocean.shootAt(row, column);
+			        ship.shootAt(row, column);
 		        }
 		        
 		        // Update display
 		        ocean.print();
 		    }
 		    
+		    // Get score and print win message and score
+		    int score = ocean.getShotsFired();
+		    System.out.println("========================\nCongratulations! A Winner is You!");
+		    System.out.println("Final Score: " + score + "\n========================");
+		    
 		    // Check if user wants to play again
-		    System.out.println("========================\nCongratulations! A Winner is You!\n========================");
 	        System.out.println("Type 1 to play again or 2 to end the game:");
 	        if (sc.nextInt() != 1) {
 	        	keepPlaying = false;
