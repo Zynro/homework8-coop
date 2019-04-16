@@ -27,7 +27,7 @@ public abstract class Ship {
 	/**
 	 * An array of 4 booleans that indicate whether that part of the ship has been hit or not.
 	 */
-	private boolean[] hit;
+	private boolean[] hit = {true, true, true, true};
 	
 	/**
 	 * Default constructor that sets the length property of the particular ship and initializes the hit array.
@@ -36,7 +36,10 @@ public abstract class Ship {
 	 */
 	public Ship(int length) {
 		this.length = length;
-		this.hit = new boolean[4];
+		//this.hit = new boolean[4];
+		for (int i = 0; i < length; i++) {
+			hit[i] = false;
+		}
 	}
 	
 	/**

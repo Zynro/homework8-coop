@@ -35,7 +35,7 @@ public class Ocean {
 		Ship[] destroyers = new Destroyer[3];
 		Ship[] submarines = new Submarine[4];
 		
-		while(placed = false) {
+		while(placed == false) {
 			int column = random.nextInt(10);
 			int row = random.nextInt(10);
 			horizontal = random.nextBoolean();
@@ -96,7 +96,7 @@ public class Ocean {
 	}
 	
 	boolean isOccupied(int row, int column) {
-		if(ships[row][column].getClass().getSimpleName() != "EmptySea") {
+		if(ships[row][column].getShipType() != "empty") {
 			return true;
 		}else {
 			return false;
@@ -105,7 +105,7 @@ public class Ocean {
 	
 	boolean shootAt(int row, int column) {
 		shotsFired++;
-		if((ships[row][column].getClass().getSimpleName() != "EmptySea") && (ships[column][row].isSunk() == false)) {
+		if((ships[row][column].getShipType() != "empty") && (ships[column][row].isSunk() == false)) {
 			hitArray[row][column] = true;
 			hitCount++;
 			return true;
