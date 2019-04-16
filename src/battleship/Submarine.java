@@ -20,4 +20,8 @@ public class Submarine extends Ship {
 	public String getShipType() {
 		return "submarine";
 	}
+	@Override
+	public String toString() {
+		return "S";
+	}
 }

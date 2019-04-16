@@ -20,4 +20,8 @@ public class Cruiser extends Ship {
 	public String getShipType() {
 		return "cruiser";
 	}
+	@Override
+	public String toString() {
+		return "C";
+	}
 }
