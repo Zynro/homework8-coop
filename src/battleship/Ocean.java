@@ -36,8 +36,8 @@ public class Ocean {
 		Ship[] submarines = new Submarine[4];
 		
 		while(placed = false) {
-			int column = random.nextInt();
-			int row = random.nextInt();
+			int column = random.nextInt(10);
+			int row = random.nextInt(10);
 			horizontal = random.nextBoolean();
 			if (battleship.okToPlaceShipAt(row, column, horizontal, this) == true) {
 				battleship.placeShipAt(row, column, horizontal, this);
@@ -51,8 +51,8 @@ public class Ocean {
 			placed = false;
 			cruisers[i] = new Cruiser();
 			while(placed == false) {
-				int column = random.nextInt();
-				int row = random.nextInt();
+				int column = random.nextInt(10);
+				int row = random.nextInt(10);
 				horizontal = random.nextBoolean();
 				if (cruisers[i].okToPlaceShipAt(row, column, horizontal, this) == true) {
 					cruisers[i].placeShipAt(row, column, horizontal, this);
@@ -66,8 +66,8 @@ public class Ocean {
 			placed = false;
 			destroyers[i] = new Destroyer();
 			while(placed == false) {
-				int column = random.nextInt();
-				int row = random.nextInt();
+				int column = random.nextInt(10);
+				int row = random.nextInt(10);
 				horizontal = random.nextBoolean();
 				if (destroyers[i].okToPlaceShipAt(row, column, horizontal, this) == true) {
 					destroyers[i].placeShipAt(row, column, horizontal, this);
@@ -81,8 +81,8 @@ public class Ocean {
 			placed = false;
 			submarines[i] = new Submarine();
 			while(placed == false) {
-				int column = random.nextInt();
-				int row = random.nextInt();
+				int column = random.nextInt(10);
+				int row = random.nextInt(10);
 				horizontal = random.nextBoolean();
 				if (submarines[i].okToPlaceShipAt(row, column, horizontal, this) == true) {
 					submarines[i].placeShipAt(row, column, horizontal, this);
