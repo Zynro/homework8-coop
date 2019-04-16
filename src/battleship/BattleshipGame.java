@@ -20,8 +20,16 @@ public class BattleshipGame {
 		    	// Get row and column to shoot
 		        System.out.println("Enter row:");
 		        int row = sc.nextInt();
+		        while(row > 9 || row < 0) {
+		        	System.out.println("Row must be between 0 and 9:");
+			        row = sc.nextInt();
+		        }
 		        System.out.println("Enter column:");
 		        int column = sc.nextInt();
+		        while(column > 9 || column < 0) {
+		        	System.out.println("Row must be between 0 and 9:");
+			        column = sc.nextInt();
+		        }
 		        
 		        // Shoot at row and column
 		        ocean.shootAt(row, column);
@@ -38,6 +46,7 @@ public class BattleshipGame {
 		    }
 		    
 		    // Check if user wants to play again
+		    System.out.println("=========\nCongratulations! You win!\n=========");
 	        System.out.println("Type 1 to play again or 2 to end the game:");
 	        if (sc.nextInt() != 1) {
 	        	keepPlaying = false;
