@@ -2,7 +2,6 @@ package battleship;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 class ShipTest {
@@ -152,6 +151,8 @@ class ShipTest {
 		assertEquals(ship.okToPlaceShipAt(6, 5, true, ocean), false); // on the bottom of ship
 		assertEquals(ship.okToPlaceShipAt(4, 6, true, ocean), false); // on the bottom left of ship
 		assertEquals(ship.okToPlaceShipAt(7, 5, true, ocean), true); // away from ship
+		ship = new Battleship(); // to test ship placement going past boundaries
+		assertEquals(ship.okToPlaceShipAt(1, 1, true, ocean), false); // at boundary of ocean
 	}
 
 	@Test
