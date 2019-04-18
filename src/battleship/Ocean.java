@@ -146,9 +146,13 @@ public class Ocean {
 	boolean shootAt(int row, int column) {
 		shotsFired++;
 		hitArray[row][column] = true;
-		if((ships[row][column].getShipType() != "empty") && (ships[column][row].isSunk() == false)) {
+		if(ships[row][column].getShipType() != "empty") {
 			hitCount++;
-			return true;
+			if (ships[column][row].isSunk() == false) {
+				return true;
+			}else {
+				return false;
+			}
 		}else {
 			return false;
 		}
