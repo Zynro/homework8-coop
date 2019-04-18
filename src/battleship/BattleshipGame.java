@@ -5,7 +5,8 @@ import java.util.Scanner;
 /**
  * The main class that controls gameplay for a Human vs Computer version of Battleship.
  * Creates an instance of ocean. Gets user input (row and column) for interacting with and playing the game.
- * @author Igor Bogush & Monil Ghodasra
+ * @author Igor Bogush
+ * @author Monil Ghodasra
  */
 public class BattleshipGame {
 

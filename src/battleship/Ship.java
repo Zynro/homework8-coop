@@ -116,7 +116,7 @@ public abstract class Ship {
 	 * Determines whether a ship is adjacent to the given tile given by the row/column.
 	 * @param row The row that contains the bow.
 	 * @param column The column that contains the bow.
-	 * @param ocean The 10x10 array representing an "ocean".
+	 * @param ships The 10x10 array representing an "ocean".
 	 * @return boolean indicating whether the tile has a ship adjacent to it.
 	 */
 	boolean isShipAdjacent(int row, int column, Ship[][] ships) {
@@ -135,7 +135,7 @@ public abstract class Ship {
 	
 	/**
 	 * Determines whether it is okay to put a ship of this length with its bow in this location.
-	 * The ship must not overlap or touch another ship and it must not ”stick out” beyond the Ocean array.
+	 * The ship must not overlap or touch another ship and it must not ï¿½stick outï¿½ beyond the Ocean array.
 	 * @param row The row that contains the bow.
 	 * @param column The column that contains the bow.
 	 * @param horizontal Whether the ship is horizontal or vertical.
@@ -214,7 +214,7 @@ public abstract class Ship {
 	}
 	
 	/**
-	 * If a part of the ship occupies the given row and column, and the ship hasn’t been sunk, marks that part of the ship as “hit”.
+	 * If a part of the ship occupies the given row and column, and the ship hasnï¿½t been sunk, marks that part of the ship as ï¿½hitï¿½.
 	 * @param row The row that contains the bow.
 	 * @param column The column that contains the bow.
 	 * @return Boolean indicating whether the ship has been hit.
